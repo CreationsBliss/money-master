@@ -10,22 +10,68 @@
 </head>
 <body>
 
-  <section>
-    <h1 class="text-center text-primary py-5">Dollar Boss</h1>
+  <section class="py-5">
+    <h1 class="text-center text-primary pb-5">Dollar Boss <img src="images/money.png" class="img-fluid" width="70px" alt="money"> </h1>
     <div class="container">
-      <div class="row g-5">
-        <div class="col-sm-12 col-md-8">
-          <img src="images/money-bag.jpg" class="img-fluid" alt="money-bag">
+      <div class="row g-3 d-flex align-items-center">
+        <div class="col-sm-12 col-md-7">
+          <img src="images/money-bag.jpg" class="img-fluid img-thumbnail" alt="money-bag">
         </div>
-        <div class="col-sm-12 col-md-4">
-          <div class="calculation-area bg-light bg-gradient">
-            <h3>Income</h3>
+
+        <div class="col-sm-12 col-md-5">
+          <div class="calculation-area bg-light bg-gradient p-5 text-center">
+            <h4 class="pb-3">Income</h4>
             <div class="mb-3 row">
-              <label for="inputPassword" class="col-sm-2 col-form-label">Income</label>
-              <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword">
+              <label for="input1" class="col-sm-2 col-form-label">Income:</label>
+              <div class="col-sm-10 ps-4">
+                <input type="text" class="form-control bg-secondary bg-opacity-25" id="input1">
               </div>
             </div>
+
+            <!-- START Expense Area -->
+            <h4 class="pb-3 pt-4">Expenses</h4>
+            <div class="mb-3 row">
+              <label for="input2" class="col-sm-2 col-form-label">Food:</label>
+              <div class="col-sm-10 ps-4">
+                <input type="text" class="form-control bg-secondary bg-opacity-25" id="input2">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="input3" class="col-sm-2 col-form-label">Rent:</label>
+              <div class="col-sm-10 ps-4">
+                <input type="text" class="form-control bg-secondary bg-opacity-25" id="input3">
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label for="input4" class="col-sm-2 col-form-label">Clothes:</label>
+              <div class="col-sm-10 ps-4">
+                <input type="text" class="form-control bg-secondary bg-opacity-25" id="input4">
+              </div>
+            </div>
+            <button class="btn btn-primary px-5">Calculate</button>
+            <h4 class="pb-3 pt-5">Total Expenses: 00</h4>
+            <h4 class="pb-3">Balance: 00</h4>
+            <!-- END Expense Area --> 
+
+
+            <!-- START Saving Area -->
+            <div class="mb-3 row mt-5">
+              <label for="input5" class="col-sm-2 col-form-label">Save:</label>
+              <div class="col-sm-5 ps-4">
+                <input type="text" class="form-control bg-secondary bg-opacity-25" id="input5">
+              </div>
+              <span class="col-sm-2">%</span>
+              <button class="btn btn-primary col-sm-3">Save</button>
+              <h4 class="pb-3 pt-5">Saving Amount: 00</h4>
+              <h4>Remaining Balance: 00</h4>
+            </div>
+
+            <!-- END Saving Area -->
+
+
+
+
+
           </div>
         </div>
       </div>
