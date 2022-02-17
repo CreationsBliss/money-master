@@ -1,36 +1,61 @@
+// Expense calculation
+function expenseCalculation(expense){
+  const expenseId = document.getElementById(expense);
+  const expenseIdText = expenseId.value;
+  const expenseAmount = parseFloat(expenseIdText);
+  return expenseAmount;
+}
+
+// Income calculation
+function incomeCalculation(){
+  const netIncome = document.getElementById("income");
+  const netIncomeText = netIncome.value;
+  const totalIncome = parseFloat(netIncomeText);
+  if(totalIncome < 0 || isNaN(totalIncome)){
+    document.getElementById("display-none").style.visibility = "visible";
+  }
+  else{
+    document.getElementById("display-none").style.visibility = "hidden";
+    return totalIncome;
+  }
+  
+}
+
+// Balance calculation
+function balanceCalculation(){
+  const netBalance = document.getElementById("total-balance");
+  const netBalanceText = netBalance.innerText;
+  const netBalanceTextNumber = parseFloat(netBalanceText);
+  return netBalanceTextNumber;
+}
+
+// Total expense
 document.getElementById("calculate-btn").addEventListener('click',function(){
   // Food cost
-  const foodCost = document.getElementById("food");
-  const foodCostText = foodCost.value;
+  const foodCost = expenseCalculation("food")
   
-
   // Rent cost
-  const rentCost = document.getElementById("rent");
-  const rentCostText = rentCost.value;
+  const rentCost = expenseCalculation("rent")
 
   // Cloth cost
-  const clothCost = document.getElementById("cloth");
-  const clothCostText = clothCost.value;
+  const clothCost = expenseCalculation("cloth")
 
   // Total Expense
   const totalExpenses = document.getElementById("total-expenses");
   const totalExpensesText = totalExpenses.innerText;
-  const totalCost = parseFloat(foodCostText) + parseFloat(rentCostText) + parseFloat(clothCostText);
+  const totalCost = foodCost + rentCost + clothCost;
   totalExpenses.innerText = totalCost;
+ 
+  // Income
+  const totalIncome = incomeCalculation("income");
 
-   // Income
-   const netIncome = document.getElementById("income");
-   const incomeText = netIncome.value;
-   const totalIncome = parseFloat(incomeText);
-
-   // Balance
+  // Balance
   const netBalance = document.getElementById("total-balance");
-  const netBalanceText = netBalance.innerText;
   netBalance.innerText = totalIncome - totalCost ;
-  
+
 })
 
-
+// Total savings
 document.getElementById("saving-btn").addEventListener('click',function(){
   // Percentage amount
   const savingPercentage = document.getElementById("saving-percentage");
@@ -38,9 +63,7 @@ document.getElementById("saving-btn").addEventListener('click',function(){
   const savingPercentageAmount = parseFloat(savingPercentageText);
 
   // Income
-  const netIncome = document.getElementById("income");
-  const incomeText = netIncome.value;
-  const totalIncome = parseFloat(incomeText); 
+  const totalIncome = incomeCalculation("income"); 
 
   // Saving amount
   const savingAmount = document.getElementById("saving-amount");
@@ -48,9 +71,7 @@ document.getElementById("saving-btn").addEventListener('click',function(){
   savingAmount.innerText  = (totalIncome * savingPercentageAmount) / 100;
 
   // Balance
-  const netBalance = document.getElementById("total-balance");
-  const netBalanceText = netBalance.innerText;
-  const netBalanceTextNumber = parseFloat(netBalanceText);
+  const netBalanceTextNumber = balanceCalculation();
 
   // Remaining balance
   const remainingBalance = document.getElementById("remaining-balance");
