@@ -15,14 +15,45 @@ document.getElementById("calculate-btn").addEventListener('click',function(){
   // Total Expense
   const totalExpenses = document.getElementById("total-expenses");
   const totalExpensesText = totalExpenses.innerText;
-  totalExpenses.innerText = parseFloat(foodCostText) + parseFloat(rentCostText) + parseFloat(clothCostText);
+  const totalCost = parseFloat(foodCostText) + parseFloat(rentCostText) + parseFloat(clothCostText);
+  totalExpenses.innerText = totalCost;
 
    // Income
    const netIncome = document.getElementById("income");
    const incomeText = netIncome.value;
+   const totalIncome = parseFloat(incomeText);
 
    // Balance
   const netBalance = document.getElementById("total-balance");
   const netBalanceText = netBalance.innerText;
-  netBalance.innerText = parseFloat(incomeText) - parseFloat(totalExpenses.innerText) ;
+  netBalance.innerText = totalIncome - totalCost ;
+  
+})
+
+
+document.getElementById("saving-btn").addEventListener('click',function(){
+  // Percentage amount
+  const savingPercentage = document.getElementById("saving-percentage");
+  const savingPercentageText = savingPercentage.value;
+  const savingPercentageAmount = parseFloat(savingPercentageText);
+
+  // Income
+  const netIncome = document.getElementById("income");
+  const incomeText = netIncome.value;
+  const totalIncome = parseFloat(incomeText); 
+
+  // Saving amount
+  const savingAmount = document.getElementById("saving-amount");
+  const savingAmountText = savingAmount.innerText;
+  savingAmount.innerText  = (totalIncome * savingPercentageAmount) / 100;
+
+  // Balance
+  const netBalance = document.getElementById("total-balance");
+  const netBalanceText = netBalance.innerText;
+  const netBalanceTextNumber = parseFloat(netBalanceText);
+
+  // Remaining balance
+  const remainingBalance = document.getElementById("remaining-balance");
+  remainingBalance.innerText = netBalanceTextNumber - savingAmount.innerText; 
+
 })
