@@ -1,4 +1,25 @@
 #display-none{
-  visibility: hidden;
+  display: none;
   font-size: 12px;
 }
+#food-display-none{
+  display: none;
+  font-size: 12px;
+}
+#rent-display-none{
+  display: none;
+  font-size: 12px;
+}
+#cloth-display-none{
+  display: none;
+  font-size: 12px;
+}
+#savingAmmount-display-text{
+  display: none;
+  font-size: 12px;
+}
+#total-expense-text{
+  display: none;
+  font-size: 12px;
+}
+/* For hidding & showing the text */
